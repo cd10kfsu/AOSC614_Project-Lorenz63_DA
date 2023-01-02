@@ -1,0 +1,4 @@
+#!/bin/bash
+
+rm -f *.mod
+ifort -O0 -mkl=sequential  mod_type.f90 mod_rnorm.f90 mod_math.f90 mod_lorenz63_fwd.f90 mod_lorenz63_oi.f90 test_oi.f90 -o oi.exe

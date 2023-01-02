@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm -f *.mod
+ifort -O0 -mkl=sequential -check bounds -traceback  mod_type.f90 \
+            mod_lorenz63_fwd.f90 test_fwd.f90 -o fwd.exe

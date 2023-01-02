@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+   echo "usage $0 prefix"
+   exit 1
+fi
+
+prefix=$1
+lname=list.fort
+
+echo "new name=$prefix.*****"
+#rename output
+if [ -f $lname ]; then
+   echo "list ($lname) already exists!"
+fi
+
+ls fort.100?0 > $lname
+
+while read fname;
+do
+  id=`echo $fname | cut -d '.' -f2`
+  fname_new="$prefix.${id}"
+  echo "${fname} ----> $fname_new"
+mv $fname $fname_new
+done < $lname
+
+rm -f $lname

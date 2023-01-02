@@ -1,0 +1,4 @@
+#!/bin/bash -xe
+
+rm -f *.mod
+ifort -r8 -O0 -fp-model strict -mkl=sequential -check bounds -traceback  mod_type.f90 mod_rnorm.f90 mod_math.f90 mod_lorenz63_fwd.f90 mod_lorenz63_lv.f90 test_lv.f90 -o lv.exe

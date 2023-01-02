@@ -1,0 +1,9 @@
+#!/bin/bash -xe
+
+bash compile_fwd.bsh
+bash compile_oi.bsh
+bash compile_3dvar.bsh
+bash compile_inc4dvar.bsh
+bash compile_enda.bsh
+#bash compile_hg.bsh
+
