@@ -1,0 +1,5 @@
+#!/bin/bash -xe
+
+rm -f *.mod
+gfortran -O2  mod_type.f90 mod_rnorm.f90 mod_lorenz63_fwd.f90 test_bv.f90 -o test_bv.x
+gfortran -O2  mod_type.f90 mod_rnorm.f90 mod_lorenz63_fwd.f90 test_bv_gsr.f90 -o test_bv_gsr.x
